@@ -11,7 +11,7 @@ var
 	sharedsession = require("express-socket.io-session");
 	cors = require("cors");
 	corsOptions = {
-		origin: 'http://192.168.0.12:3000',
+		origin: (process.env.REACT_APP_CLIENT || 'http://localhost:3000'),
 		credentials: true };
 	cookieParser = require('cookie-parser');
 	bodyParser = require('body-parser');
@@ -76,8 +76,9 @@ io.on('connection', function(socket) {
 
 });
   
-const PORT = 8001;
-server.listen(PORT,'192.168.0.12', function(){
+const PORT = process.env.PORT || 8001;
+const server_url = process.env.SERVER_URL
+server.listen(PORT,null, function(){
   console.log(`listening on *:${PORT}`);
 });
 
