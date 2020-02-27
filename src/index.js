@@ -49,6 +49,8 @@ app.get('/logout/:nickname', function(req, res) {
 	res.status(200).send({logout:true});
 });
 
+
+
 app.use(require('express').static(__dirname));
 
 io.on('connection', function(socket) {
@@ -92,12 +94,25 @@ function removeNickname(nickname) {
 }
 
 messageCollection = [ 
-	{'id':'8ea473bf-d89b-4732-93f1-ab39e01604c9','user':'John Doe','body':'Fake Message from server','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
-	{'id':'04ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'John Doe','body':'Fake Message from server','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false}
-  
+	{'id':'8ea473bf-d89b-4732-93f1-ab39e01604c9','user':'John','body':'Fake Message from John','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'04ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'Doe','body':'Fake Message from Doe','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'14ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'Lorem Ipsum','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	'datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'24ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'Lorem Ipsum','body':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+	'datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'34ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'John Doe','body':'Short message from John Doe','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'44ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'Sara','body':'Fake Message from Sara','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'54ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'Slade','body':'Fake Message from Slade','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+	{'id':'64ab7b23-eae4-4fe1-8ab0-4519b915ec6f','user':'Bruce','body':'Fake Message from Bruce','datetime':Date.now(),'isUserMessage':true, 'isSystemMessage':false},
+
   ];
   
 nicknameCollection = [
-	'Lucas',
-	'Lucas1'
+	'John',
+	'Doe',
+	'Lorem Ipsum',
+	'Slade',
+	'Sara',
+	'Bruce',
+	'John Doe'
 ];
